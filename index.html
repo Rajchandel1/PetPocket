@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+</html>
+<html>
+<head>
+<base href="/">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PawPocket - Your Pet's Happy Place</title>
+<script src="https://cdn.jsdelivr.net/npm/hammerjs@2.0.8/hammer.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Chewy&family=Delius+Swash+Caps&family=Lilita+One&family=Pacifico&family=Sour+Gummy:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+ 
+<header>
+  <nav class="navbar">
+    <div class="nav-left">
+      <button class="hamburger-menu">
+        <i class="fas fa-bars"></i>
+      </button>
+      <a href="index.html" class="logo">
+        <h1>PetPocket</h1>
+      </a>
+    </div>
+
+    <div class="nav-center">
+      <div class="search-container">
+        <input type="text" placeholder="Search for pets, products..." onclick="window.location='./SearchProduct.html'">
+        <button class="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+
+    <div class="nav-right">
+      <a href="" class="nav-icon phone-icon">
+        <i class="fas fa-phone"></i>
+      </a>
+      <a href="./Cartdetail.html" class="nav-icon cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
+      <button class="login-btn desktop-only" onclick="window.location='./Signin.html'">Login/Signup</button>
+    </div>
+  </nav>
+
+  <nav class="category-nav">
+    <ul>
+      <li><a href="https://petsy.com/mega-deals">Mega Deals</a></li>
+      <li><a href="https://petsy.com/collections">Curated Collections</a></li>
+      <li><a href="https://petsy.com/dogs">Dogs</a></li>
+      <li><a href="https://petsy.com/cats">Cats</a></li>
+      <li><a href="#pet">More Pets</a></li>
+    </ul>
+  </nav>
+</header>
+
+<div class="mobile-menu">
+  <div class="mobile-menu-header">
+    <button class="close-menu">
+      <i class="fas fa-times"></i>
+    </button>
+    <div class="mobile-login-section">
+      <h3>Login/Signup</h3>
+      <p>Sign in for the best experience</p>
+      <button class="mobile-login-btn" onclick="window.location='./Signin.html'">Login/Signup</button>
+    </div>
+  </div>
+  <ul class="mobile-menu-items">
+    <li><a href="https://petsy.com/mega-deals">Mega Deals</a></li>
+    <li><a href="https://petsy.com/collections">Curated Collections</a></li>
+    <li><a href="https://petsy.com/dogs">Dogs</a></li>
+    <li><a href="https://petsy.com/cats">Cats</a></li>
+    <li><a href="#pet">More Pets</a></li>
+    <li><a href="https://petsy.com/breeds">Know Your Breeds</a></li>
+  </ul>
+</div>
+
+<div class="overlay"></div>
+
+
+  <div class="hero" id="hero">
+    
+  <div class="overlay"></div>
+ 
+  <div class="hero-content">
+    <div class="png">
+      <img src="./images/belt.png" alt="">
+      <img src="./images/food.png" alt="">
+  </div>
+    <div class="hero-text">
+      <h1 class="hero-title">
+        <span class="quality">Quality</span> You Can Trust, 
+        <span class="love">Love</span> They Can Feel.
+      </h1>
+      <p class="hero-subtitle">
+        Your pets bring unconditional love into your life, and they deserve the very best in return. We offer top-quality products that keep them happy and healthy&#x2014;without stretching your budget.
+      </p>
+      <div class="hero-buttons">
+        <a href="#pet" class="cta-button" style="text-decoration: none;">Make Pet Happy</a>
+      </div>
+    </div>
+    
+    <div class="tinder-wrapper">
+        <div class="card-container">
+          <p class="swipe"><- swipe -></p>
+            <div class="card" data-product="Pet Food">
+                <div class="card-content">
+                    <div class="card-image">
+                       <img src="https://img.freepik.com/premium-photo/3d-dog-with-kibble-bowl-icon-pet-enjoying-meal-illustration-logo_762678-105321.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+                    </div>
+                    <h2>Premium Pet Food</h2>
+                    <p>High-quality nutrition for your beloved pets. Made with natural ingredients.</p>
+                    <button class="shop-now"><a href="./PetDetail.html">Shop Now</a></button>
+                </div>
+            </div>
+            <div class="card" data-product="Clothes">
+                <div class="card-content">
+                    <div class="card-image">
+                        <img src="https://img.freepik.com/free-photo/cute-tiger-studio_23-2150844453.jpg?t=st=1736604249~exp=1736607849~hmac=16098e42ec6f6a53a0f2cb3e6f34f1bae02da808e600d082bd9280c6a414d3d0&w=360" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+
+                    </div>
+                    <h2>Pet Fashion</h2>
+                    <p>Stylish and comfortable clothes for pets of all sizes.</p>
+                    <button class="shop-now"><a href="./PetDetail.html">Shop Now</a></button>
+                </div>
+            </div>
+            <div class="card" data-product="Grooming">
+                <div class="card-content">
+                    <div class="card-image">
+                        <img src="https://img.freepik.com/premium-photo/3d-pet-detangling-spray-icon-hair-care-product-pets-illustration-logo_762678-99638.jpg?w=740" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+
+                    </div>
+                    <h2>Grooming Services</h2>
+                    <p>Professional grooming services to keep your pet looking their best.</p>
+                    <button class="shop-now"><a href="./PetDetail.html">Shop Now</a></button>
+                </div>
+            </div>
+            <div class="card" data-product="Toys">
+                <div class="card-content">
+                    <div class="card-image">
+                        <img src="https://img.freepik.com/free-photo/3d-rendering-cartoon-dog-portrait_23-2150906986.jpg?t=st=1736604798~exp=1736608398~hmac=380102036be2f086cd297e4c1d9f29d370055c6eaecad55581fd5eaf3069984f&w=1380" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+
+                    </div>
+                    <h2>Interactive Toys</h2>
+                    <p>Engaging toys to keep your pets entertained and active.</p>
+                    <button class="shop-now"><a href="./PetDetail.html">Shop Now</a></button>
+                </div>
+            </div>
+            <!-- <div class="swipe-hint">← Swipe cards to explore</div> -->
+        </div>
+    
+    </div>
+  </div>
+</div>
+
+
+<section class="pet-categories" id="pet">
+  <h2 class="section-title">Find Products For Your Pet🐾</h2>
+  <div class="pet-grid">
+    <div class="pet-card" data-pet="dog">
+      <img src="https://img.freepik.com/free-photo/adorable-shiba-inu-dog-studio_23-2150797210.jpg" alt="Dog">
+      <div class="pet-info">
+        <h3>Dogs</h3>
+        <p>Everything your furry friend needs</p>
+        <a href="./PetDetail.html" class="pet-button">Shop Now</a>
+      </div>
+    </div>
+    
+    <div class="pet-card" data-pet="cat">
+      <img src="https://img.freepik.com/free-photo/view-3d-graphic-cat_23-2150849065.jpg" alt="Cat">
+      <div class="pet-info">
+        <h3>Cats</h3>
+        <p>Purrfect products for your feline</p>
+        <a href="./PetDetail.html" class="pet-button">Shop Now</a>
+      </div>
+    </div>
+    
+    <div class="pet-card" data-pet="bird">
+      <img src="https://img.freepik.com/free-photo/cartoony-bird-studio_23-2151002124.jpg" alt="Bird">
+      <div class="pet-info">
+        <h3>Birds</h3>
+        <p>Everything for your feathered friends</p>
+        <a href="./PetDetail.html" class="pet-button">Shop Now</a>
+      </div>
+    </div>
+    
+    <div class="pet-card" data-pet="fish">
+      <img src="https://img.freepik.com/free-photo/view-animated-cartoon-3d-fish_23-2150984990.jpg" alt="Fish">
+      <div class="pet-info">
+        <h3>Fish</h3>
+        <p>Make your aquatic pets happy</p>
+        <a href="./PetDetail.html" class="pet-button">Shop Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="product-carousel">
+  <h2 class="section-title">Pet Parents Most Wanted🐾</h2>
+  <div class="carousel-container">
+    <div class="product-cards">
+      <div class="product-card">
+        <div class="product-badge">Best Seller</div>
+        <img src="https://img.freepik.com/free-psd/3d-illustration-with-pet-essential-icon_23-2151228831.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Pet Food">
+        <div class="product-info">
+          <h3>Premium Pet Food</h3>
+          <div class="product-price">Rs.29.99</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge">Popular</div>
+        <img src="https://img.freepik.com/free-photo/3d-view-adorable-pet-cat_23-2150473300.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Pet Toys">
+        <div class="product-info">
+          <h3>Interactive Toys</h3>
+          <div class="product-price">Rs.19.99</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge">New</div>
+        <img src="https://img.freepik.com/free-psd/3d-illustration-with-pet-essential-icon_23-2151228813.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Pet Bed">
+        <div class="product-info">
+          <h3>Cozy Pet Bed</h3>
+          <div class="product-price">Rs.49.99</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+
+      <div class="product-card">
+        <div class="product-badge">Top Rated</div>
+        <img src="https://img.freepik.com/premium-photo/cartoon-pet-nail-clipper-comb-pet-shower-gel-so-pet-supplies-3d-rendering_778569-5816.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Grooming Kit">
+        <div class="product-info">
+          <h3>Grooming Kit</h3>
+          <div class="product-price">Rs.39.99</div>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="new-pet-banner">
+    <div class="np-content">
+        <div class="np-text">
+            <h2>New Pet at Home?</h2>
+            <p>Let's make their transition smooth and comfortable</p>
+            <div class="tip-container">
+                <div class="tip" onclick="window.open('https://petsatlas.com/pet-products-for-new-pet-owners-in-india/','_blank')">
+                <i class="fa-solid fa-dog"></i>
+                    <span>Starter Essential Gear for Your New Friend</span>
+                </div>
+                <div class="tip" onclick="window.open('https://www.24petwatch.com/blog/new-dog-or-cat-the-ultimate-checklist-for-new-pet-parents','_blank')">
+                    <i class="fa-solid fa-cat"></i>
+                    <span>Training Made Easy </span>
+                </div>
+                <div class="tip"  onclick="window.open('https://www.vetchatbot.com/','_blank')">
+                    <i class="fa-solid fa-shield-dog"></i>
+                    <span>Get Vet Help For Free</span>
+                </div>
+            </div>
+        </div>
+       
+    </div>
+    <div class="np-gallery">
+        <div class="np-image-container">
+            <img src="https://img.freepik.com/free-photo/adorable-puppy-studio_23-2150797088.jpg" alt="New pet 1" class="np-image">
+            <img src="https://img.freepik.com/free-photo/adorable-puppy-studio_23-2150797172.jpg" alt="New pet 2" class="np-image">
+            <img src="https://img.freepik.com/free-photo/cute-cat-studio_23-2150932333.jpg" alt="New pet 3" class="np-image">
+            <img src="https://img.freepik.com/free-photo/cute-tiger-studio_23-2150844453.jpg" alt="New pet 4" class="np-image">
+        </div>
+    </div>
+</section>
+
+<section class="reviews">
+  <h2 class="section-title">What Pet Parents Say</h2>
+  <div class="reviews-container">
+    <div class="reviews-grid">
+      <div class="review-card">
+        <div class="review-profile">
+          <div class="review-avatar" style="overflow: hidden;">
+            <img src="https://img.freepik.com/premium-photo/young-caucasian-girl-with-sincere-smile-takes-selfie-with-black-white-dog-arms-pink-background-pets-concept_197531-31339.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+          </div>
+          <div class="review-info">
+            <h3>Sarah Johnson</h3>
+            <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          </div>
+        </div>
+        <p class="review-text">&quot;The products are amazing! My dog loves his new toys and the quality is outstanding. Definitely coming back for more!&quot;</p>
+        <div class="review-pet">
+          Dog Parent
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-profile">
+            <div class="review-avatar" style="overflow: hidden;">
+                <img src="https://img.freepik.com/premium-photo/young-caucasian-girl-with-sincere-smile-takes-selfie-with-black-white-dog-arms-pink-background-pets-concept_197531-31339.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+              </div>
+          <div class="review-info">
+            <h3>Mike Peters</h3>
+            <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          </div>
+        </div>
+        <p class="review-text">&quot;The premium cat food I bought here made such a difference. My cat&apos;s coat is shinier and she&apos;s more energetic!&quot;</p>
+        <div class="review-pet">
+         
+          Cat Parent
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-profile">
+            <div class="review-avatar" style="overflow: hidden;">
+                <img src="https://img.freepik.com/premium-photo/young-caucasian-girl-with-sincere-smile-takes-selfie-with-black-white-dog-arms-pink-background-pets-concept_197531-31339.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+              </div>
+          <div class="review-info">
+            <h3>Emily Rodriguez</h3>
+            <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          </div>
+        </div>
+        <p class="review-text">&quot;The bird toys are perfect! My parakeet is so much more active and happy. Great prices too!&quot;</p>
+        <div class="review-pet">
+         
+          Bird Parent
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-profile">
+            <div class="review-avatar" style="overflow: hidden;">
+                <img src="https://img.freepik.com/premium-photo/young-caucasian-girl-with-sincere-smile-takes-selfie-with-black-white-dog-arms-pink-background-pets-concept_197531-31339.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+              </div>
+          <div class="review-info">
+            <h3>Emily Rodriguez</h3>
+            <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          </div>
+        </div>
+        <p class="review-text">&quot;The bird toys are perfect! My parakeet is so much more active and happy. Great prices too!&quot;</p>
+        <div class="review-pet">
+         
+          Bird Parent
+        </div>
+      </div> <div class="review-card">
+        <div class="review-profile">
+            <div class="review-avatar" style="overflow: hidden;">
+                <img src="https://img.freepik.com/premium-photo/young-caucasian-girl-with-sincere-smile-takes-selfie-with-black-white-dog-arms-pink-background-pets-concept_197531-31339.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="" style="height: 100%; width: 100%; object-fit: cover;">
+              </div>
+          <div class="review-info">
+            <h3>Emily Rodriguez</h3>
+            <div class="stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          </div>
+        </div>
+        <p class="review-text">&quot;The bird toys are perfect! My parakeet is so much more active and happy. Great prices too!&quot;</p>
+        <div class="review-pet">
+        
+          Bird Parent
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="premium-diet">
+    <div class="premium-diet-container">
+        <div class="premium-diet-content">
+            <h2>Download Premium Diet Plan</h2>
+            <p>Get expert-crafted nutrition plans tailored for your pet&apos;s needs. Limited time offer - download our premium diet plans completely free! Ensure your pet gets the balanced nutrition they deserve.</p>
+            <a href="./pet_diet_pdf.pdf" class="premium-diet-btn" download="">Download Now - It's Free!</a>
+        </div>
+        <div class="premium-diet-image">
+            <img src="https://img.freepik.com/free-photo/3d-cartoon-hospital-healthcare-scene_23-2151644085.jpg" alt="Pet Healthcare" class="premium-diet-img">
+        </div>
+    </div>
+</section>
+
+<section class="blog" id="blog">
+  <h2 class="section-title">Pet Care Tips &amp; Stories</h2>
+  <div class="blog-grid">
+    <article class="blog-card">
+      <img src="https://img.freepik.com/premium-photo/adorable-corgi-dog-is-smiling-funny-cute-corgi-with-flowers-love_854727-18537.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Training Tips" class="blog-image">
+      <div class="blog-content">
+        <h3>Essential Training Tips for New Puppies</h3>
+        <p>Learn the fundamentals of puppy training and create a strong bond with your furry friend.</p>
+        <div class="blog-meta">
+          <span>5 min read</span>
+          <a href="https://pawparadise.com/blog/puppy-training" class="read-more">Read More &#x2192;</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="blog-card">
+      <img src="https://img.freepik.com/premium-photo/3d-happy-cat-sits-desk-with-two-laptops-cup-coffee-3d-illustration_1008419-8745.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Cat Care" class="blog-image">
+      <div class="blog-content">
+        <h3>Understanding Your Cat&apos;s Body Language</h3>
+        <p>Decode your cat&apos;s behavior and learn what they&apos;re trying to tell you.</p>
+        <div class="blog-meta">
+          <span>4 min read</span>
+          <a href="https://pawparadise.com/blog/cat-language" class="read-more">Read More &#x2192;</a>
+        </div>
+      </div>
+    </article>
+
+    
+    <article class="blog-card">
+        <img src="https://img.freepik.com/free-photo/cute-cat-studio_23-2150932393.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Cat Care" class="blog-image">
+        <div class="blog-content">
+          <h3>Understanding Your Cat&apos;s Body Language</h3>
+          <p>Decode your cat&apos;s behavior and learn what they&apos;re trying to tell you.</p>
+          <div class="blog-meta">
+            <span>4 min read</span>
+            <a href="https://pawparadise.com/blog/cat-language" class="read-more">Read More &#x2192;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="https://img.freepik.com/free-photo/cute-cat-studio_23-2150932391.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Cat Care" class="blog-image">
+        <div class="blog-content">
+          <h3>Understanding Your Cat&apos;s Body Language</h3>
+          <p>Decode your cat&apos;s behavior and learn what they&apos;re trying to tell you.</p>
+          <div class="blog-meta">
+            <span>4 min read</span>
+            <a href="https://pawparadise.com/blog/cat-language" class="read-more">Read More &#x2192;</a>
+          </div>
+        </div>
+      </article>
+
+      <article class="blog-card">
+        <img src="https://img.freepik.com/premium-vector/chinese-maneki-neko-lucky-cat-cartoon-character_106878-82.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Cat Care" class="blog-image">
+        <div class="blog-content">
+          <h3>Understanding Your Cat&apos;s Body Language</h3>
+          <p>Decode your cat&apos;s behavior and learn what they&apos;re trying to tell you.</p>
+          <div class="blog-meta">
+            <span>4 min read</span>
+            <a href="https://pawparadise.com/blog/cat-language" class="read-more">Read More &#x2192;</a>
+          </div>
+        </div>
+      </article>
+      
+
+    <article class="blog-card">
+      <img src="https://img.freepik.com/free-photo/view-cartoon-animated-3d-penguin_23-2150882000.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="Bird Care" class="blog-image">
+      <div class="blog-content">
+        <h3>Creating the Perfect Bird Habitat</h3>
+        <p>Set up a comfortable and enriching environment for your feathered companions.</p>
+        <div class="blog-meta">
+          <span>6 min read</span>
+          <a href="https://pawparadise.com/blog/bird-habitat" class="read-more">Read More &#x2192;</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+  <section class="newsletter-section">
+                <div class="newsletter-container">
+                    <div class="newsletter-images">
+                        <img src="https://img.freepik.com/free-photo/cartoon-scene-depicting-human-pet-friendship-affection_23-2151444484.jpg" alt="Pet friendship 1" class="newsletter-img">
+                        <img src="https://img.freepik.com/free-photo/cartoon-scene-depicting-human-pet-friendship-affection_23-2151444493.jpg" alt="Pet friendship 2" class="newsletter-img">
+                    </div>
+                    <div class="newsletter-content">
+                        <h2>Join Our Pet Parent Community!</h2>
+                        <p>Subscribe to get special offers, free giveaways, and pawsome updates.</p>
+                        <form action="https://api.web3forms.com/submit" method="POST" class="newsletter-form">
+                            <input type="hidden" name="access_key" value="YOUR-ACCESS-KEY-HERE">
+                            <input type="email" name="email" placeholder="Enter your email" required>
+                            <button type="submit" class="newsletter-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+
+            <footer class="footer" id="contact">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>About Us</h3>
+                        <p>Your one-stop destination for all pet needs. We care for your pets like family!</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#nav">Home</a></li>
+                            <li><a href="#pet">Shop</a></li>
+                            <!-- <li><a href="https://example.com/about">About Us</a></li> -->
+                            <li><a href="#contact">Contact</a></li>
+                            <li><a href="#blog">Pet Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contact Us</h3>
+                        <p>Email: support@petstore.com</p>
+                        <p>Phone: +1 234 567 890</p>
+                        <div class="social-icons">
+                            <a href="https://facebook.com" class="social-icon">
+                                <i class="fa-brands fa-facebook"></i>
+                            </a>
+                            <a href="https://twitter.com" class="social-icon"> 
+                                <i class="fa-brands fa-twitter"></i>
+                            </a>
+                            <a href="https://instagram.com" class="social-icon">
+                                <i class="fa-brands fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&#xa9; 2024 Pet Store. All rights reserved.</p>
+                </div>
+            </footer>      
+
+<script src="script.js"></script>
+</body></html>

@@ -1,0 +1,335 @@
+<html><head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+  :root {
+    --primary: #FF6B6B;
+    --secondary: #4ECDC4;
+    --accent: #FFD93D;
+    --text: #2C3E50;
+    --light: #F8F9FA;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --gradient: linear-gradient(45deg, #FFD93D, #ff6b6b);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+  }
+  
+  body {
+    background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+    min-height: 100vh;
+  }
+  
+ 
+header{
+  height: 10vh;
+  width: 100%;
+  margin-bottom: 2vh;
+}
+.nav{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.637);
+  position: fixed;
+  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+  z-index: 99;
+}
+
+.logo{
+  color: #FF6B6B;
+  cursor: pointer;
+}
+
+.nav i{
+  display: inline;
+  font-size: 25px ;
+  cursor: pointer;
+}
+
+@media (max-width: 768px){
+  
+  .nav{
+    padding: 5px 10px;
+  }
+.logo{
+  font-size: 12px ;
+
+}
+
+.nav i{
+  display: inline;
+  font-size: 20px ;
+  cursor: pointer;
+}
+}
+
+ 
+
+  .pet-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+  }
+  
+  .pet-title {
+    color: var(--primary);
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+  }
+  
+  .tab-container {
+    max-width: 1200px;
+    margin: 0 auto 2rem;
+    border-bottom: 2px solid #EEF0F7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    overflow-x: auto;
+    scrollbar-width: none;
+    padding-bottom: 1rem;
+  }
+  
+  .tab-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .tab {
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    white-space: nowrap;
+    font-weight: 600;
+    color: #64748b;
+    transition: all 0.3s ease;
+    background: transparent;
+    border: none;
+  }
+  
+  .tab.active {
+    background: var(--gradient);
+    color: white;
+  }
+  
+  .products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  
+  .product-card {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px var(--shadow);
+  }
+  
+  .product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  }
+  
+  .product-image {
+    height: 240px;
+    background: linear-gradient(45deg, #f1f5ff 0%, #ffffff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .product-info {
+    padding: 2rem;
+  }
+  
+  .product-title {
+    color: var(--text);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  
+  .product-price {
+    color: var(--primary);
+    font-weight: 700;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+    display: flex;
+    align-items: center;
+    letter-spacing: -0.5px;
+  }
+  
+  .product-description {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .add-to-cart {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    letter-spacing: 0.3px;
+  }
+  
+  .add-to-cart:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      padding: 1rem;
+    }
+    
+    .pet-title {
+      font-size: 2.2rem;
+    }
+    
+    .tab-container {
+      padding: 0.5rem;
+      margin: -0.5rem -0.5rem 2rem -0.5rem;
+      width: calc(100% + 1rem);
+      /* overflow-x: auto; */
+      justify-content: start;
+    }
+    
+    .products-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .product-info {
+      padding: 1.5rem;
+    }
+  }
+  </style>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <header>
+      <div class="nav">
+        <div class="close-btn">
+          <i class="fa-solid fa-arrow-left close-btn" onclick="window.history.back()"></i>
+          </div>
+          <div class="logo">
+            <h1>PetPocket</h1>
+          </div>
+          <div class="cart">
+            <i class="fa-solid fa-cart-shopping" onclick="window.location='./Cartdetail.html'"></i>
+          </div>
+      </div>
+    
+    </header>
+    
+    <div class="pet-header">
+      <h1 class="pet-title">Pawsome Pet Shop</h1>
+    </div>
+  
+    <div class="tab-container">
+      <button class="tab active" data-category="food">Food & Treats</button>
+      <button class="tab" data-category="toys">Toys & Play</button>
+      <button class="tab" data-category="grooming">Grooming</button>
+      <button class="tab" data-category="clothes">Fashion</button>
+    </div>
+  
+    <div class="products-grid" id="productsGrid">
+      <!-- Products will be dynamically inserted here -->
+    </div>
+  
+  <script>
+  const products = {
+    food: [
+      { name: "Premium Dog Food", price: 29.99, description: "High-quality, nutritious dry food made with real meat and vegetables for adult dogs" },
+      { name: "Organic Treats", price: 12.99, description: "100% natural, grain-free treats perfect for training and rewarding" },
+      { name: "Puppy Formula", price: 34.99, description: "Specially formulated nutrition for growing puppies with DHA for brain development" },
+    ],
+    toys: [
+      { name: "Interactive Puzzle Toy", price: 19.99, description: "Challenging mental stimulation toy to keep your dog engaged and entertained" },
+      { name: "Durable Squeaky Bone", price: 9.99, description: "Long-lasting rubber bone with engaging squeaker for hours of play" },
+      { name: "Premium Rope Toy Set", price: 15.99, description: "Set of high-quality rope toys for tugging and dental health" },
+    ],
+    grooming: [
+      { name: "Luxury Pet Shampoo", price: 14.99, description: "Gentle, pH-balanced formula with natural ingredients for a soft, shiny coat" },
+      { name: "Professional Brush Set", price: 24.99, description: "Complete grooming kit with multiple brushes for all coat types" },
+      { name: "Nail Care Kit", price: 16.99, description: "Professional-grade nail clippers with safety guard and file" },
+    ],
+    clothes: [
+      { name: "Cozy Winter Jacket", price: 39.99, description: "Water-resistant, fleece-lined jacket perfect for cold weather walks" },
+      { name: "Stylish Raincoat", price: 29.99, description: "Lightweight, waterproof coat with reflective strips for safety" },
+      { name: "Summer Cool Vest", price: 19.99, description: "Breathable, UV-protective vest for hot summer days" },
+    ]
+  };
+  
+  function displayProducts(category) {
+    const productsGrid = document.getElementById('productsGrid');
+    productsGrid.innerHTML = '';
+    
+    products[category].forEach(product => {
+      const productCard = document.createElement('div');
+      productCard.className = 'product-card';
+      productCard.innerHTML = `
+        <div class="product-image">
+          <!-- Product image placeholder with gradient -->
+        </div>
+        <div class="product-info">
+          <h3 class="product-title">${product.name}</h3>
+          <p class="product-description">${product.description}</p>
+          <p class="product-price">$${product.price}</p>
+          <button class="add-to-cart">Add to Cart</button>
+        </div>
+      `;
+      productsGrid.appendChild(productCard);
+    });
+  }
+  
+  document.querySelectorAll('.tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      displayProducts(tab.dataset.category);
+      
+      if (window.innerWidth <= 768) {
+        tab.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    });
+  });
+  
+  displayProducts('food');
+  
+  document.addEventListener('click', (e) => {
+    if (e.target.classList.contains('add-to-cart')) {
+      const productName = e.target.parentElement.querySelector('.product-title').textContent;
+      alert(`${productName} has been added to your cart! 🎉`);
+    }
+  });
+  </script>
+  </body></html>

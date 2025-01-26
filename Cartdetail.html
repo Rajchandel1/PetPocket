@@ -1,0 +1,428 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shopping Cart | Your Store</title> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --primary: #FF6B6B;
+  --secondary: #4ECDC4;
+  --accent: #FFD93D;
+  --text: #2C3E50;
+  --light: #F8F9FA;
+  --border: #E9ECEF;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+  min-height: 100vh;
+  color: var(--text);
+}
+
+
+
+header{
+  height: 10vh;
+  width: 100%;
+  margin-bottom: 20px;
+
+}
+.nav{
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 40px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.637);
+  position: fixed;
+  background: linear-gradient(135deg, #fff5f5 0%, #fff 100%);
+  z-index: 99;
+}
+
+.logo{
+  color: #FF6B6B;
+  cursor: pointer;
+}
+
+.nav i{
+  display: inline;
+  font-size: 25px ;
+  cursor: pointer;
+}
+
+@media (max-width: 768px){
+  
+  .nav{
+    padding: 5px 10px;
+  }
+.logo{
+  font-size: 12px ;
+
+}
+
+.nav i{
+  display: inline;
+  font-size: 20px ;
+  cursor: pointer;
+}
+}
+
+
+
+.cart-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 2rem;
+}
+
+.cart-header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cart-header h1 {
+  color: var(--text);
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+
+.cart-header svg {
+  width: 28px;
+  height: 28px;
+  fill: var(--primary);
+}
+
+.cart-items {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+.cart-item {
+  background: white;
+  border-radius: 12px;
+  padding: 1.25rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1.5rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  transition: box-shadow 0.2s ease, opacity 0.2s ease;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cart-item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.item-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  background: var(--light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+}
+
+.item-details h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.item-details p {
+  color: #666;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.item-price {
+  color: var(--text);
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.item-quantity {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+.quantity-btn {
+  background: transparent;
+  border: none;
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.quantity-btn:hover {
+  color: var(--primary);
+}
+
+.quantity-number {
+  font-weight: 500;
+  min-width: 24px;
+  text-align: center;
+}
+
+.remove-btn {
+  color: #DC3545;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.remove-btn:hover {
+  opacity: 1;
+}
+
+.cart-summary {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  height: fit-content;
+  position: sticky;
+  top: 20px;
+}
+
+.summary-header {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.summary-row.total {
+  border-top: 1px solid var(--border);
+  margin-top: 1rem;
+  padding-top: 1rem;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.checkout-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.checkout-btn:hover {
+  background: #ff5252;
+  transform: translateY(-1px);
+}
+
+.secure-text {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+@media (max-width: 968px) {
+  .cart-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .cart-summary {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .cart-item {
+    grid-template-columns: auto 1fr;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .item-image {
+    width: 80px;
+    height: 80px;
+    grid-row: span 2;
+  }
+  
+  .item-details {
+    grid-column: 2;
+  }
+  
+  .item-quantity {
+    grid-column: 2;
+    justify-self: start;
+  }
+  
+  .remove-btn {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+.product-img{
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+</style>
+</head>
+<body>
+
+  <header>
+    <div class="nav">
+      <div class="close-btn">
+        <i class="fa-solid fa-arrow-left close-btn" onclick="window.location='index.html'"></i>
+        </div>
+        <div class="logo">
+          <h1>PetPocket</h1>
+        </div>
+        <div class="store">
+          <i class="fa-solid fa-store" onclick="window.location='./SearchProduct.html'" title="find something for last minute shopping"></i></div>
+    </div>
+  
+  </header>
+  
+
+<div class="cart-container">
+  <div class="cart-header">
+    <svg viewBox="0 0 24 24">
+      <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <h1>Shopping Cart (2 items)</h1>
+  </div>
+  
+  <div class="cart-items">
+    <div class="cart-item">
+      <div class="item-image">
+        <img src="https://img.freepik.com/free-photo/3d-view-adorable-pet-cat_23-2150473300.jpg?ga=GA1.1.874350228.1720606149&semt=ais_hybrid" alt="" class="product-img">
+      </div>
+      <div class="item-details">
+        <h3>Cute Pet Toy</h3>
+        <p>Size: Medium | Color: White</p>
+        <p class="item-price">Rs.19.99</p>
+      </div>
+      <div class="item-quantity">
+        <button class="quantity-btn">−</button>
+        <span class="quantity-number">1</span>
+        <button class="quantity-btn">+</button>
+      </div>
+      <button class="remove-btn">Remove</button>
+    </div>
+  </div>
+  
+  <div class="cart-summary">
+    <h2 class="summary-header">Order Summary</h2>
+    <div class="summary-row">
+      <span>Subtotal</span>
+      <span>$19.99</span>
+    </div>
+    <div class="summary-row">
+      <span>Shipping</span>
+      <span>$5.00</span>
+    </div>
+    <div class="summary-row">
+      <span>Tax</span>
+      <span>$2.50</span>
+    </div>
+    <div class="summary-row total">
+      <strong>Total</strong>
+      <strong>$27.49</strong>
+    </div>
+    <button class="checkout-btn">Proceed to Checkout</button>
+    <div class="secure-text">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#666">
+        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+      </svg>
+      Secure Checkout
+    </div>
+  </div>
+</div>
+
+<script>
+document.querySelectorAll('.quantity-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const quantitySpan = this.parentElement.querySelector('.quantity-number');
+    let quantity = parseInt(quantitySpan.textContent);
+    
+    if (this.textContent === '+') {
+      quantity = Math.min(quantity + 1, 99);
+    } else if (this.textContent === '−' && quantity > 1) {
+      quantity--;
+    }
+    
+    quantitySpan.textContent = quantity;
+    updateTotals();
+  });
+});
+
+document.querySelectorAll('.remove-btn').forEach(button => {
+  button.addEventListener('click', function() {
+    const item = this.closest('.cart-item');
+    item.style.opacity = '0';
+    setTimeout(() => {
+      item.remove();
+      updateTotals();
+      updateCartHeader();
+    }, 200);
+  });
+});
+
+function updateTotals() {
+  // This would typically connect to a backend
+  console.log('Totals updated');
+}
+
+function updateCartHeader() {
+  const itemCount = document.querySelectorAll('.cart-item').length;
+  const headerText = `Shopping Cart (${itemCount} ${itemCount === 1 ? 'item' : 'items'})`;
+  document.querySelector('.cart-header h1').textContent = headerText;
+}
+</script>
+</body></html>
